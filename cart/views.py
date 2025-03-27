@@ -3,7 +3,8 @@ from store.models import Product
 from .models  import Cart,CartItem
 from store.models import Variation
 from django.core.exceptions import ObjectDoesNotExist
-from django.http  import HttpResponse
+
+
 
 
 def _cart_id(request):
