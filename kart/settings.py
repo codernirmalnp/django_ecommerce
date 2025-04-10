@@ -85,24 +85,19 @@ AUTH_USER_MODEL='accounts.Account'
 
 
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
+
+DATABASES = {
+    'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ['RDS_DB_NAME'],
             'USER': os.environ['RDS_USERNAME'],
             'PASSWORD': os.environ['RDS_PASSWORD'],
             'HOST': os.environ['RDS_HOSTNAME'],
             'PORT': os.environ['RDS_PORT'],
-        }
+     }
+     
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+
 
 
 
